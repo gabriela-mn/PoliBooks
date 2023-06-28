@@ -1,13 +1,14 @@
 .r-border{
-    padding: 5%;
+    padding: 1%;
     border: solid 1px;
     border-radius: 15px;
     background: #FFF;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.22);
+    
 }
 .r-title{
     border: solid 1px;
-    margin: 5% 2.5% 5% 10%;
+    margin: 0% 2.5% 5% 10%;
     display: block;
     color: #375A7A;
     font-size: 40px;
@@ -28,4 +29,7 @@
     border: solid 1px;
     margin: 5% 10% 5% 2.5%;
     padding: 10% 10% 10% 20%;
+}
+.internalBorder{
+    
 }
