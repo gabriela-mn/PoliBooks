@@ -1,0 +1,31 @@
+.r-border{
+    padding: 5%;
+    border: solid 1px;
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.22);
+}
+.r-title{
+    border: solid 1px;
+    margin: 5% 2.5% 5% 10%;
+    display: block;
+    color: #375A7A;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: 700;
+    letter-spacing: -1.8px;
+    text-transform: capitalize;
+}
+#imgUser{
+    
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.22);
+    font-size: 20px;
+
+}
+.imgUser{
+    border: solid 1px;
+    margin: 5% 10% 5% 2.5%;
+    padding: 10% 10% 10% 20%;
+}
