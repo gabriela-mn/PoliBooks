@@ -1834,3 +1834,16 @@ section {
     padding: 2px 0;
   }
 }
+
+.wrapperscroll {
+  min-height: 100vh; /* Establecer una altura mínima igual al 100% de la altura de la ventana */
+  overflow-y: auto; /* Permitir el desplazamiento vertical si el contenido excede la altura del contenedor */
+}
+
+.btn-orange-border {
+  border-color: orange;
+}
+
+input[type="number"] {
+  background-color: #fff;
+}
