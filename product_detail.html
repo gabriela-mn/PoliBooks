@@ -23,6 +23,7 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -49,7 +50,7 @@
         </div>
         <div class="button-container">
           <input class="btn-buy" type="button" value="Iniciar sesión">
-          <input class="btn-buy" type="button" value="Registrarse">
+          <input class="btn-buy" type="button" value="Registrarse" style ="margin-left: 5px;">
         </div>
       </div>
 
@@ -81,35 +82,67 @@
     <section id="testimonials" class="testimonials">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-5">
             <div class="testimonial-item">
               <img src="assets/img/PoliBooks/interchange_2a.jpg" height="450" alt="Interchange 2A" class="w-20 h-10 object-contain">
+              <div class="row">
+                <div class="col-lg-5"><p style="text-align: right; margin-top: 10px;">Estado:</p></div>
+                <div class="col-lg-5" style="text-align: left; margin-top: 10px;">
+                  <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+                
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="testimonial-item">
-              <h3 class="text-3xl text-left" style="font-size: 40px;">Interchange 2A</h3>
-              <div class="text-lg">
-                <p><strong>Código:</strong> 9781009070904</p>
-                <p><strong>Descripción:</strong> Material de aprendizaje de CUP ELT</p>
-                <p><strong>Marca:</strong> Cambridge</p>
-                <p><strong>Institución:</strong> BOOKS AND BITS</p>
-                <p><strong>Nivel:</strong> -</p>
-                <p><strong>Costo unitario:</strong> $ 25.74</p>
-                <p><strong>Cantidad:</strong> <input type="number" style="background-color: white; color: black;"></p>
-                <p><strong>Subtotal:</strong> $ 25.74</p>
-                <p><strong>IVA (12%):</strong> $ 0.00</p>
-                <p><strong>Valor Total:</strong> $ 25.74</p>
-                <p><strong>Contacto:</strong> 0989853033</p>
+              <h3 class="text-3xl text-left" style="font-size: 64px; margin-bottom: 50px; margin-left: -195px;">Interchange 2A</h3>
+              <div class="grid-container">
+                <p style="text-align: right;"><strong>Código:</strong></p>
+                <p style="text-align: left;">9781009070904</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Descripción:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">Material de aprendizaje de CUP ELT</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Marca:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">Cambridge</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Institución:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">BOOKS AND BITS</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Nivel:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">-</p>
+                <p style="text-align: right; margin-top: -20px; margin-left: -25px; white-space: nowrap;">
+                  <strong>Costo unitario:</strong>
+                </p>
+                <p style="text-align: left; margin-top: -20px;">$ 25.74</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Cantidad:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">
+                  <input type="number" class="w-24 px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 h-auto" style="background-color: white; color: black;">
+                </p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Subtotal:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">$ 25.74</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>IVA (12%):</strong></p>
+                <p style="text-align: left; margin-top: -20px;">$ 0.00</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Valor Total:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">$ 25.74</p>
+                <p style="text-align: right; margin-top: -20px;"><strong>Contacto:</strong></p>
+                <p style="text-align: left; margin-top: -20px;">0989853033</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-1 d-flex align-items-center justify-content-center">
+            <div class="testimonial-item">
+              <div class="button-container">
+                <button class="buy-button">Comprar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-      
-       
-      
     <!-- End Testimonials Section -->
 
       <!-- ======= Featured Services Section ======= -->
@@ -119,71 +152,121 @@
         </div>
         <div class="container">
           <div class="row">
+            <!-- =item = -->
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
               <div class="icon-box">
-                <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="50ypx">
-                <h4 class="title">Geometría Plana</h4>
-                <div class="rating">
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star-half"></i>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="150ypx">
+                    
+                  </div>
+                  <div class="col-lg-6">
+                    <h4 class="title" style="text-align: left; font-size: 16px;">Geometría Plana</h4>
+                    <div class="rating">
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star-half"></i>
+                    </div>
+                    <p class="price" style="color: #F40000; font-size: 32px;">$25.00</p>
+                    <div class="button-container">
+                      <button class="buy-button" style="width: 100px; height: 30px; font-size: 16px; padding: 0px 0px;">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p class="price">$25.00</p>
-                <a href="#" class="btn btn-gray btn-sm btn-orange-border">Comprar</a>
               </div>
             </div>
+            <!-- =fin item = -->
 
+            <!-- =item = -->
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
               <div class="icon-box">
-                <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="50ypx">
-                <h4 class="title">Geometría Plana</h4>
-                <div class="rating">
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star-half"></i>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="150ypx">
+                    
+                  </div>
+                  <div class="col-lg-6">
+                    <h4 class="title" style="text-align: left; font-size: 16px;">Geometría Plana</h4>
+                    <div class="rating">
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star-half"></i>
+                    </div>
+                    <p class="price" style="color: #F40000; font-size: 32px;">$25.00</p>
+                    <div class="button-container">
+                      <button class="buy-button" style="width: 100px; height: 30px; font-size: 16px; padding: 0px 0px;">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p class="price">$25.00</p>
-                <a href="#" class="btn btn-gray btn-sm btn-orange-border">Comprar</a>
               </div>
             </div>
+            <!-- =fin item = -->
 
+            <!-- =item = -->
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
               <div class="icon-box">
-                <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="50ypx">
-                <h4 class="title">Geometría Plana</h4>
-                <div class="rating">
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star-half"></i>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="150ypx">
+                    
+                  </div>
+                  <div class="col-lg-6">
+                    <h4 class="title" style="text-align: left; font-size: 16px;">Geometría Plana</h4>
+                    <div class="rating">
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star-half"></i>
+                    </div>
+                    <p class="price" style="color: #F40000; font-size: 32px;">$25.00</p>
+                    <div class="button-container">
+                      <button class="buy-button" style="width: 100px; height: 30px; font-size: 16px; padding: 0px 0px;">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p class="price">$25.00</p>
-                <a href="#" class="btn btn-gray btn-sm btn-orange-border">Comprar</a>
               </div>
             </div>
+            <!-- =fin item = -->
 
+            <!-- =item = -->
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
               <div class="icon-box">
-                <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="50ypx">
-                <h4 class="title">Geometría Plana</h4>
-                <div class="rating">
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star-half"></i>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <img src="assets/img/PoliBooks/geometria_plana_calvache.jpg" alt="Geometría Plana" height="150ypx">
+                    
+                  </div>
+                  <div class="col-lg-6">
+                    <h4 class="title" style="text-align: left; font-size: 16px;">Geometría Plana</h4>
+                    <div class="rating">
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star"></i>
+                      <i class="bx bxs-star-half"></i>
+                    </div>
+                    <p class="price" style="color: #F40000; font-size: 32px;">$25.00</p>
+                    <div class="button-container">
+                      <button class="buy-button" style="width: 100px; height: 30px; font-size: 16px; padding: 0px 0px;">
+                        Comprar
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <p class="price">$25.00</p>
-                <a href="#" class="btn btn-gray btn-sm btn-orange-border">Comprar</a>
               </div>
             </div>
-      
-            <!-- Agrega los otros elementos similares aquí -->
+            <!-- =fin item = -->
       
           </div>
         </div>
