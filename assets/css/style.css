@@ -1867,19 +1867,17 @@ input[type="number"] {
   align-items: center;
   margin-top: 20px;
   margin-left: -100px;
-  font-size: 48px;
+  font-size: 20px;
 }
 
 .button-container .buy-button {
-  width: 250px;
-  height: 100px;
-  padding: 10px 20px;
+  width: 210px;
+  height: 60px;
 }
 
 .buy-button {
   background-color: #DFB625;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s; /* Agregamos transición */
@@ -1889,7 +1887,7 @@ input[type="number"] {
   background-color: #0E3B65; /* Cambiamos el color al hacer hover */
 }
 
-.aligned-p {
-  text-align: right;
-  margin-top: -20px;
+.align-p {
+  display: flex;
+  justify-content: flex-end;
 }
