@@ -1891,3 +1891,76 @@ input[type="number"] {
   display: flex;
   justify-content: flex-end;
 }
+
+.book-title {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.book-input {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-input label {
+  font-weight: bold;
+  text-align: right;
+}
+
+.book-input input[type="text"] {
+  width: 100%;
+  padding: 5px;
+}
+
+.book-image {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-image label {
+  font-weight: bold;
+  text-align: right;
+}
+
+.book-image img {
+  height: 200px;
+}
+
+.book-image .browse-btn {
+  margin-top: 10px;
+}
+
+.book-grid {
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+}
+
+.book-input label {
+  font-weight: bold;
+}
+
+.book-image img {
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.browse-btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
