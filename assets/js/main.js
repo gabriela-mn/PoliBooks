@@ -5,6 +5,9 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
+
 (function() {
   "use strict";
 
@@ -281,9 +284,57 @@
     })
   });
 
+
   /**
    * Initiate Pure Counter 
    */
   new PureCounter();
+
+/*
+  Abrir y cerrar el dialog de login
+*/  
+document.getElementById('openDialog').addEventListener('click', function() {
+  document.getElementById('dialogOverlay').style.display = 'flex';
+  
+});
+
+document.getElementById('dialogOverlay').addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.style.display = 'none';
+  }
+});
+
+document.getElementById('close-login-dialog').addEventListener('click', function(e) {
+  document.getElementById('dialogOverlay').style.display = 'none';
+});
+/*
+Mostrar la cotnraseña al aplastar el botón
+*/
+document.getElementById('hide-login-password').addEventListener('click', function(e) {
+  document.getElementById('password').type = 'text';
+});
+
+/*
+Abrir el dialog de forgot password
+*/
+document.getElementById('forgot-password-button').addEventListener('click', function() {
+  document.getElementById('dialogForgotPassword').style.display = 'flex';
+  document.getElementById('dialogOverlay').style.display = 'none';
+});
+
+document.getElementById('close-forgot-dialog').addEventListener('click', function(e) {
+  document.getElementById('dialogForgotPassword').style.display = 'none';
+});
+
+document.getElementById('signup-button').addEventListener('click', function() {
+  document.getElementById('dialogResetPassword').style.display = 'flex';
+});
+
+/*
+Close reset password dialog
+*/
+document.getElementById('close-reset-dialog').addEventListener('click', function(e) {
+  document.getElementById('dialogResetPassword').style.display = 'none';
+});
 
 })()
