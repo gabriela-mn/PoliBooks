@@ -317,6 +317,10 @@ document.getElementById('close-reset-dialog').addEventListener('click', function
   document.getElementById('dialogResetPassword').style.display = 'none';
 });
 
+function redirectToUpdatePage(bookId) {
+  window.location.href = `update.html?id=${bookId}`;
+}
+
 // Habilitar/deshabilitar el botón Publicar según el estado del checkbox
 const acceptCheckbox = document.getElementById('accept-checkbox');
 const publishButton = document.querySelector('.publish-button');
@@ -332,5 +336,66 @@ acceptCheckbox.addEventListener('change', function() {
     checkmarkIcon.remove();
   }
 });
+
+// Obtener elementos del DOM
+var profileButton = document.getElementById('profile-button');
+var profileMenu = document.getElementById('profile-menu');
+var logoutButton = document.getElementById('logout-button');
+
+// Agregar evento para mostrar/ocultar el menú desplegable
+profileButton.addEventListener('click', function() {
+  profileMenu.classList.toggle('show');
+});
+
+// Agregar evento para la acción de cerrar sesión
+logoutButton.addEventListener('click', function() {
+  // Mostrar mensaje de confirmación
+  var confirmLogout = confirm("¿Estás seguro de que deseas cerrar sesión?");
+
+  // Si el usuario confirma, redirigir a la página index.html
+  if (confirmLogout) {
+    window.location.href = 'index.html';
+  }
+});
+
+
+
+/*
+function deleteBook(bookId) {
+  var confirmDelete = confirm("¿Realmente quieres eliminar este libro?");
+
+  if (confirmDelete) {
+    // Delete
+    var bookElement = document.querySelector('[data-book-id="' + bookId + '"]');
+    if (bookElement) {
+      bookElement.parentNode.parentNode.remove();
+      console.log("Libro eliminado: " + bookId);
+    }
+  }
+}
+*/
+function deleteBook(bookId) {
+  $('#confirmModal').modal('show');
+}
+
+function deleteBookConfirmed(bookId) {
+  // Delete
+  var bookElement = document.querySelector('[data-book-id="' + bookId + '"]');
+  if (bookElement) {
+    bookElement.parentNode.parentNode.remove();
+    console.log("Libro eliminado: " + bookId);
+  }
+
+  $('#confirmModal').modal('hide');
+}
+
+$('#confirmModal').on('show.bs.modal', function () {
+  $('.modal-confirm').css('display', 'block');
+});
+
+$('#confirmModal').on('hide.bs.modal', function () {
+  $('.modal-confirm').css('display', 'none');
+});
+
 
 })()

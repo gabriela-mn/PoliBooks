@@ -82,191 +82,118 @@
     </nav><!-- .navbar -->
 
   </header>
+
   <body>
-    <section id="product-detail" class="product-detail">
+
+    <section id="seller-profile" class="seller-profile">
       <div class="container">
+  
+        <!-- Texto principal -->
         <div class="row">
-          <div class="col-lg-5">
-              <div class="testimonial-item">
-              <img src="assets/img/PoliBooks/interChange2A.jpg" height="450" alt="Interchange 2A" class="w-20 h-10 object-contain">
-              <div class="row">
-                  <div class="col-lg-5"><p style="text-align: right; margin-top: 10px;">Estado:</p></div>
-                  <div class="col-lg-5" style="text-align: left; margin-top: 10px;">
-                  <div class="rating-stars">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
+          <div class="col-lg-12">
+            <div style="background-color: rgb(255, 102, 0); padding: 20px; border-radius: 20px;">
+              <div style="background-color: white; padding: 20px; border-radius: 20px;">
+                <h3 style="color: rgb(212, 165, 8);">Crear.Gestionar.Publicar</h3>
+                <p>Publicar un libro:<br> Ahora tiene la posibilidad de comercializar libros educativos en diferentes
+                  presentaciones, como libros de tapa blanda y libros de tapa dura.</p>
+                <a href="create_book.html" class="btn btn-primary"
+                  style="background-color: rgb(212, 165, 8); color: white;">Crear</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fin texto principal -->
+    
+        <div class="row portfolio-container">
+          <!-- Libros del vendedor -->
+          <div class="row">
+            <!-- Libro 1 -->
+            <div class="col-lg-4 col-md-4 portfolio-item">
+              <div class="portfolio-wrap">
+                <img src="assets/img/PoliBooks/interChange2A.jpg" class="img-fluid" alt="Portada del libro">
+                <div class="portfolio-info">
+                  <h4>Título del libro</h4>
+                  <p>Autor del libro</p>
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
+                    <div class="edit-delete-buttons">
+                      <button class="btn-edit" data-book-id="1" onclick="window.location.href='update_book.html'">Editar</button>
+                      <button class="btn-delete" data-book-id="1" onclick="deleteBook(1)">Eliminar</button>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Libro 2 -->
+            <div class="col-lg-4 col-md-4 portfolio-item">
+              <div class="portfolio-wrap">
+                <img src="assets/img/PoliBooks/interChange1A.jpg" class="img-fluid" alt="Portada del libro">
+                <div class="portfolio-info">
+                  <h4>Título del libro</h4>
+                  <p>Autor del libro</p>
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
+                    <div class="edit-delete-buttons">
+                      <button class="btn-edit" data-book-id="2" onclick="window.location.href='update_book.html'">Editar</button>
+                      <button class="btn-delete" data-book-id="2" onclick="deleteBook(2)">Eliminar</button>
+                    </div>
                   </div>
-                  
+                </div>
               </div>
-              </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="testimonial-item">
-              <h3 class="text-3xl text-left" style="font-size: 64px; margin-bottom: 50px; margin-left: -195px;">Interchange 2A</h3>
-              <div class="grid-container">
-                <p class="align-p"><strong>Código:</strong></p>
-                <p style="text-align: left;">9781009070904</p>
-                <p class="align-p" style="margin-top: -20px;"><strong>Descripción:</strong></p>
-                <p style="text-align: left; margin-top: -20px;">Material de aprendizaje de CUP ELT</p>
-                <p class="align-p" style="margin-top: -20px;"><strong>Marca:</strong></p>
-                <p style="text-align: left; margin-top: -20px;">Cambridge</p>
-                <p class="align-p" style="margin-top: -20px;"><strong>Institución:</strong></p>
-                <p style="text-align: left; margin-top: -20px;">BOOKS AND BITS</p>
-                <p class="align-p" style="margin-top: -20px;"><strong>Nivel:</strong></p>
-                <p style="text-align: left; margin-top: -20px;">-</p>
-                <p class="align-p" style="margin-top: -20px; white-space: nowrap;">
-                <strong>Costo unitario:</strong>
-                </p>
-                <p style="text-align: left; margin-top: -20px;">$ 25.74</p>
-                <p class="align-p" style="margin-top: -20px;"><strong>IVA (12%):</strong></p>
-                <p style="text-align: left; margin-top: -20px;">$ 0.00</p>
-                <p class="align-p" style="margin-top: -20px;"><strong>Valor Total:</strong></p>
-                <p style="text-align: left; margin-top: -20px;">$ 25.74</p>
-                <p class="align-p" style="margin-top: -20px;"><strong>Contacto:</strong></p>
-                <p style="text-align: left; margin-top: -20px;">0989853033</p>
+            </div>
+    
+            <!-- Libro 3 -->
+            <div class="col-lg-4 col-md-4 portfolio-item">
+              <div class="portfolio-wrap">
+                <img src="assets/img/PoliBooks/interChange3.jpg" class="img-fluid" alt="Portada del libro">
+                <div class="portfolio-info">
+                  <h4>Título del libro</h4>
+                  <p>Autor del libro</p>
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
+                    <div class="edit-delete-buttons">
+                      <button class="btn-edit" data-book-id="3" onclick="window.location.href='update_book.html'" >Editar</button>
+                      <button class="btn-delete" data-book-id="3" onclick="deleteBook(3)">Eliminar</button>
+                      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog"
+                        aria-labelledby="confirmModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="confirmModalLabel">Confirmación de eliminación</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>¿Realmente quieres eliminar este libro?</p>
+                            </div>
+                            <div class="modal-footer">
+                              <a class="btn btn-secondary" data-dismiss="modal" href="SellerProfile.html">Cancelar</a>
+                              <button type="button" class="btn btn-danger"
+                                onclick="deleteBookConfirmed(1)">Eliminar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-1 d-flex align-items-center justify-content-center">
-            <div class="testimonial-item">
-              <div class="button-container">
-                <button class="buy-button">Comprar</button>
-              </div>
-            </div>
-          </div>
-          </div>
+    
+    
         </div>
-      </section>
-
-
-      <!-- ======= Featured Services Section ======= -->
-      <section id="featured-services" class="featured-services">
-        <div class="featured-services-title">
-          Relacionados
+    
+        <div class="text-center mt-4">
+          <button class="btn btn-primary">Ver más</button>
         </div>
-        <div class="books-container" data-aos="fade-up">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/PoliBooks/interChange1A.jpg" class="books-item-image" alt="">
-            <div class="books-description">
-              <h4 class="title"><a href="">Interchange 1A</a></h4>
-              <div class="star-container">
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-              </div>
-              <h3>$ 25.00</h3>
-              <input onclick="window.location.href='product_detail.html'" class="buy-books-button" type="button" value="Comprar">
-            </div>
-          </div>
+    
+    
+      </div>
+    </section>
 
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/PoliBooks/interChange2B.jpg" class="books-item-image" alt="">
-            <div class="books-description">
-              <h4 class="title"><a href="">Interchange 2B</a></h4>
-              <div class="star-container">
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ffffff;"></i>
-              </div>
-              <h3>$ 25.00</h3>
-              <input onclick="window.location.href='product_detail.html'" class="buy-books-button" type="button" value="Comprar">
-            </div>
-          </div>
-
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-            <img src="assets/img/PoliBooks/interChange3.jpg" class="books-item-image" alt="">
-            <div class="books-description">
-              <h4 class="title"><a href="">Interchange 3</a></h4>
-              <div class="star-container">
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #fff;"></i>
-                <i class="fa-solid fa-star" style="color: #fff;"></i>
-                <i class="fa-solid fa-star" style="color: #fff;"></i>
-              </div>
-              <h3>$ 30.00</h3>
-              <input onclick="window.location.href='product_detail.html'" class="buy-books-button" type="button" value="Comprar">
-            </div>
-          </div>
-
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-            <img src="assets/img/PoliBooks/interChange2A.jpg" class="books-item-image" alt="">
-            <div class="books-description">
-              <h4 class="title"><a href="">Interchange </a></h4>
-              <div class="star-container">
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #fff;"></i>
-                <i class="fa-solid fa-star" style="color: #fff;"></i>
-                <i class="fa-solid fa-star" style="color: #ffffff;"></i>
-              </div>
-              <h3>$ 35.00</h3>
-              <input onclick="window.location.href='product_detail.html'" class="buy-books-button" type="button" value="Comprar">
-            </div>
-          </div>
-
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/PoliBooks/interChange2B.jpg" class="books-item-image" alt="">
-            <div class="books-description">
-              <h4 class="title"><a href="">Interchange 2B</a></h4>
-              <div class="star-container">
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-              </div>
-              <h3>$ 25.00</h3>
-              <input onclick="window.location.href='product_detail.html'" class="buy-books-button" type="button" value="Comprar">
-            </div>
-          </div>
-
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-            <img src="assets/img/PoliBooks/interChange3.jpg" class="books-item-image" alt="">
-            <div class="books-description">
-              <h4 class="title"><a href="">Interchange 3</a></h4>
-              <div class="star-container">
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-              </div>
-              <h3>$ 30.00</h3>
-              <input onclick="window.location.href='product_detail.html'" class="buy-books-button" type="button" value="Comprar">
-            </div>
-          </div>
-
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-            <img src="assets/img/PoliBooks/interChange2A.jpg" class="books-item-image" alt="">
-            <div class="books-description">
-              <h4 class="title"><a href="">Interchange </a></h4>
-              <div class="star-container">
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ede616;"></i>
-                <i class="fa-solid fa-star" style="color: #ffffff;"></i>
-              </div>
-              <h3>$ 35.00</h3>
-              <input onclick="window.location.href='product_detail.html'" class="buy-books-button" type="button" value="Comprar">
-            </div>
-          </div>
-
-        </div>
-      </section><!-- End Featured Services Section -->
-
-      <!--
-                Dialog for login
-           -->
       <section>
         <div id="dialogOverlay">
           <div id="loginDialog">
