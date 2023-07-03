@@ -170,10 +170,10 @@
                         <p style="color: red; font-size: 12px; margin-top: -15px;">*Opcional</p>
                         <div>
                           <input id= "image" type="file" id="file-input" accept="image/jpeg, image/png" style="display: none;">
-                          <label for="file-input" class="buy-button"
-                            style="background-color: grey; width: 100px; height: 20px; font-size: 12px; padding: 0px 12%; float: left; cursor: pointer;">
+                          <label for="file-input" class="buy-button" style="color: aliceblue; border-radius: 0.25rem; background-color: grey; width: 100px; height: 20px; font-size: 12px; padding: 0px 12%; float: left; cursor: pointer;">
                             Examinar
-                          </label>
+                            <input id="file-input" type="file" accept="image/jpeg, image/png" style="display: none;">
+                          </label>                          
                         </div>
                       </div>
                     </div>
@@ -283,7 +283,7 @@
                   </div>
     
                   <div class="row">
-                    <input id= "unitCost" type="text" class="form-control" style="width: 600px;">
+                    <input id= "unitCost" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                   </div>
                 </div>
               </div>
@@ -309,7 +309,7 @@
                   </div>
     
                   <div class="row">
-                    <input id = "quantity" type="text" class="form-control" style="width: 600px;">
+                    <input id = "quantity" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                   </div>
                 </div>
               </div>
@@ -336,7 +336,7 @@
                   </div>
     
                   <div class="row">
-                    <input id= "contact" type="text" class="form-control" style="width: 600px;">
+                    <input id= "contact" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                   </div>
                 </div>
               </div>
@@ -592,6 +592,14 @@
       });
   
       // Mostrar los libros al cargar la página
+    </script>
+    <script>
+      const fileInput = document.getElementById('file-input');
+      const label = document.querySelector('.buy-button');
+    
+      label.addEventListener('click', () => {
+        fileInput.click();
+      });
     </script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
