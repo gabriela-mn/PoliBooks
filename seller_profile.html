@@ -352,11 +352,12 @@
                 <div class="portfolio-info">
                   <h4>${book.title}</h4>
                   <p>${book.level}</p>
+                  <p style="display: none;"> ${book.id} </p>
                   <div class="portfolio-links">
                     <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
                     <div class="edit-delete-buttons">
                       <button class="btn-edit" data-book-id="1" onclick="window.location.href='update_book.html'">Editar</button>
-                      <button class="btn-delete" data-book-id="1" onclick="deleteBook(1)">Eliminar</button>
+                      <button class="btn-delete" data-book-id="1" onclick="deleteBook('A')">Eliminar</button>
                     </div>
                   </div>
                 </div>
@@ -395,8 +396,31 @@
         bookForm.reset();
       });
   
-      // Mostrar los libros al cargar la página
-      displayBooks();
+      // Función para borrar un libro del Local Storage
+function deleteBook(title) {
+  // Obtener los libros guardados del Local Storage
+  let books = localStorage.getItem('books');
+  if (!books) {
+    return; // Si no hay libros guardados, salir de la función
+  }
+
+  // Convertir la cadena JSON a un array
+  books = JSON.parse(books);
+
+  // Buscar el libro con el título especificado
+  const index = books.findIndex(book => book.title === title);
+  if (index === -1) {
+    return; // Si el libro no se encuentra, salir de la función
+  }
+
+  // Eliminar el libro del array de libros
+  books.splice(index, 1);
+
+  // Guardar el array actualizado en el Local Storage
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+      
     </script>
 
   </body>

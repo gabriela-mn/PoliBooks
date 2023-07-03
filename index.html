@@ -359,13 +359,13 @@
                 <h2>Iniciar sesión</h2>
                 <p class="login-dialog-text">Inicia sesión para publicar tu Libro a la venta</p>
                 <form>
-                  <input class="login-dialog-user" type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Usuario o correo electrónico" id="username" required>
+                  <input class="login-dialog-user" type="text" placeholder="Usuario o correo electrónico" id="username_login" required>
                   <div class="login-dialog-password-container d-flex">
-                    <input class="login-dialog-password" type="password" placeholder="Contraseña" id="password" required>
-                    <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
+                    <input class="login-dialog-password" id="password_login" type="password" placeholder="Contraseña" id="password" required>
+                    <a href="#"  id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
                   </div>
                   <a href="#" id="forgot-password-button" class="login-dialog-text">¿Olvidaste tu contraseña?</a>
-                  <button class="login-dialog-button" type="submit">Iniciar sesión</button>
+                  <button class="login-dialog-button" id="login_button" type="button">Iniciar sesión</button>
                   <p class="login-dialog-signup-text">¿No tienes cuenta? <a href="registerUser.html">Registrate</a></p>
                 </form>
               </div>
@@ -383,8 +383,8 @@
                 <p class="login-dialog-text">Por favor, ingresa tu dirección de correo electrónico a continuación y te enviaremos
                   información para cambiar tu contraseña.</p>
                 <form>
-                  <input pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="login-dialog-user" type="text" placeholder="Correo electrónico" id="username" required>
-                  <button class="login-dialog-button" type="submit">Enviar correo</button>
+                  <input class="login-dialog-user" type="text" placeholder="Correo electrónico" id="forgot_password_email" required>
+                  <button class="login-dialog-button" id="forgot_password_button" type="button">Enviar correo</button>
                 </form>
               </div>
             </div>
@@ -406,11 +406,11 @@
                   </ul>
                   <div class="login-dialog-password-container d-flex">
                     <input class="login-dialog-password" type="password" placeholder="Nueva contraseña" id="password" required>
-                    <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
+                    <a href="#" id="hide-login-password1" class="d-flex align-items-center fa-solid fa-eye"></a>
                   </div>
                   <div class="login-dialog-password-container d-flex">
                     <input class="login-dialog-password" type="password" placeholder="Vuelva a escribir la contraseña" id="password" required>
-                    <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
+                    <a href="#" id="hide-login-password1" class="d-flex align-items-center fa-solid fa-eye"></a>
                   </div>
                 <form>
                     <button class="reset-dialog-button" type="submit">Confirmar</button>
@@ -420,7 +420,63 @@
           </section>
           
           </main><!-- End #main -->
+<script>
+  function isValidEmail(email) {
+    // Expresión regular para validar el formato del correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
+  function isValidPassword(password) {
+    // Expresión regular para validar el formato del correo electrónico
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    return passwordRegex.test(password);
+  }
+  // Event listener para el botón o elemento en el que se hace clic
+  document.getElementById('login_button').addEventListener('click', function () {
+    // Obtener el valor del correo electrónico ingresado
+    const emailInput = document.getElementById('username_login').value;
+    const passwordInput =  document.getElementById('password_login').value
+    // Validar el correo electrónico
+    if (isValidEmail(emailInput) && isValidPassword(passwordInput)) {
+      // El correo electrónico es válido
+      alert('Credenciales vàlidas');
+      document.getElementById('dialogOverlay').style.display = 'none';
+      // Continúa con la lógica adicional que desees
+    } else {
+      // El correo electrónico es inválido
+      alert('Credenciales inválidas');
+      // Realiza las acciones necesarias para manejar un correo electrónico inválido
+    }
+  });
+
+    // Event listener para el botón o elemento en el que se hace clic
+    document.getElementById('forgot_password_button').addEventListener('click', function () {
+    // Obtener el valor del correo electrónico ingresado
+    const emailInput = document.getElementById('forgot_password_email').value;
+    // Validar el correo electrónico
+    if (isValidEmail(emailInput)) {
+      // El correo electrónico es válido
+      alert('Correo válido');
+      document.getElementById('dialogForgotPassword').style.display = 'none';
+      // Continúa con la lógica adicional que desees
+    } else {
+      // El correo electrónico es inválido
+      alert('Correo inválido');
+      // Realiza las acciones necesarias para manejar un correo electrónico inválido
+    }
+  });
+
+  document.getElementById('hide-login-password').addEventListener('click', function () {
+    let boton = document.getElementById('password_login'); 
+    if( boton.type == 'password'){
+      boton.type = 'text';
+    }else{
+      boton.type = 'password';
+    }
+  });
+
+</script>
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
