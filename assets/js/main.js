@@ -248,29 +248,7 @@
 
   });
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
 
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
 
   /**
    * Animation on scroll
@@ -326,9 +304,11 @@ document.getElementById('close-forgot-dialog').addEventListener('click', functio
   document.getElementById('dialogForgotPassword').style.display = 'none';
 });
 
+/*
 document.getElementById('signup-button').addEventListener('click', function() {
   document.getElementById('dialogResetPassword').style.display = 'flex';
 });
+*/
 
 /*
 Close reset password dialog

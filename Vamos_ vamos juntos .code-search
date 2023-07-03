@@ -1,0 +1,30 @@
+# Query: Vamos, vamos juntos 
+# Flags: CaseSensitive
+# ContextLines: 1
+
+5 results - 5 files
+
+create_book.html:
+  50        <div class="quote">
+  51:          “La lectura de un buen libro es un diálogo incesante, en que el libro habla, y el alma contesta” (André Maurois)
+  52        </div>
+
+index.html:
+  65        <div class="quote">
+  66:          “La lectura de un buen libro es un diálogo incesante, en que el libro habla, y el alma contesta” (André Maurois)
+  67        </div>
+
+product_detail.html:
+  50        <div class="quote">
+  51:          “La lectura de un buen libro es un diálogo incesante, en que el libro habla, y el alma contesta” (André Maurois)
+  52        </div>
+
+registerUser.html:
+  50        <div class="quote">
+  51:          “La lectura de un buen libro es un diálogo incesante, en que el libro habla, y el alma contesta” (André Maurois)
+  52        </div>
+
+template.html:
+  67        <div class="quote">
+  68:          “La lectura de un buen libro es un diálogo incesante, en que el libro habla, y el alma contesta” (André Maurois)
+  69        </div>

@@ -704,6 +704,13 @@ h6 {
   z-index: 1;
 }
 
+.featured-services .featured-services-title {
+  padding: 0px 40px;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Roboto",sans-serif;
+}
+
 
 .featured-services .icon-box::before {
   content: "";
