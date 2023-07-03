@@ -105,118 +105,34 @@
 
         <div class="row portfolio-container">
           <!-- Libros del vendedor -->
-          <div class="row">
+          <div id="seller-books-list" class="d-flex">
             <!-- Libro 1 -->
-            <div class="col-lg-4 col-md-4 portfolio-item">
-              <div class="portfolio-wrap">
-                <img src="assets/img/PoliBooks/interChange2A.jpg" class="img-fluid" alt="Portada del libro">
-                <div class="portfolio-info">
-                  <h4>Título del libro</h4>
-                  <p>Autor del libro</p>
-                  <div class="portfolio-links">
-                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
-                    <div class="edit-delete-buttons">
-                      <button class="btn-edit" data-book-id="1" onclick="window.location.href='update_book.html'">Editar</button>
-                      <button class="btn-delete" data-book-id="1" onclick="deleteBook(1)">Eliminar</button>
-                    </div>
+          
+          
+            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmación de eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
-                </div>
-              </div>
-            </div>
-            
-            <script>
-              function deleteBook(bookId) {
-                $('#confirmModal').modal('show');
-              }
-              function deleteBookConfirmed(bookId) {
-                // Delete
-                var bookElement = document.querySelector('[data-book-id="' + bookId + '"]');
-                if (bookElement) {
-                  bookElement.parentNode.parentNode.remove();
-                  console.log("Libro eliminado: " + bookId);
-                }
-
-                $('#confirmModal').modal('hide');
-              }
-
-              $('#confirmModal').on('show.bs.modal', function () {
-                $('.modal-confirm').css('display', 'block');
-              });
-
-              $('#confirmModal').on('hide.bs.modal', function () {
-                $('.modal-confirm').css('display', 'none');
-              });
-
-              function closeModal(){
-                $('#confirmModal').modal('hide');
-              }
-              
-            </script>
-            <!-- Libro 2 -->
-            <div class="col-lg-4 col-md-4 portfolio-item">
-              <div class="portfolio-wrap">
-                <img src="assets/img/PoliBooks/interChange1A.jpg" class="img-fluid" alt="Portada del libro">
-                <div class="portfolio-info">
-                  <h4>Título del libro</h4>
-                  <p>Autor del libro</p>
-                  <div class="portfolio-links">
-                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
-                    <div class="edit-delete-buttons">
-                      <button class="btn-edit" data-book-id="2" onclick="window.location.href='update_book.html'">Editar</button>
-                      <button class="btn-delete" data-book-id="2" onclick="deleteBook(2)">Eliminar</button>
-                    </div>
+                  <div class="modal-body">
+                    <p>¿Realmente quieres eliminar este libro?</p>
                   </div>
-                </div>
-              </div>
-            </div>
-    
-            <!-- Libro 3 -->
-            <div class="col-lg-4 col-md-4 portfolio-item">
-              <div class="portfolio-wrap">
-                <img src="assets/img/PoliBooks/interChange3.jpg" class="img-fluid" alt="Portada del libro">
-                <div class="portfolio-info">
-                  <h4>Título del libro</h4>
-                  <p>Autor del libro</p>
-                  <div class="portfolio-links">
-                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
-                    <div class="edit-delete-buttons">
-                      <button class="btn-edit" data-book-id="3" onclick="window.location.href='update_book.html'" >Editar</button>
-                      <button class="btn-delete" data-book-id="3" onclick="deleteBook(3)">Eliminar</button>
-                      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog"
-                        aria-labelledby="confirmModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="confirmModalLabel">Confirmación de eliminación</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <p>¿Realmente quieres eliminar este libro?</p>
-                            </div>
-                            <div class="modal-footer">
-                              <a class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()"">Cancelar</a>
-                              <button type="button" class="btn btn-danger"
-                                onclick="deleteBookConfirmed(1)">Eliminar</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="modal-footer">
+                    <a class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()"">Cancelar</a>
+                                        <button type=" button" class="btn btn-danger"
+                      onclick="deleteBookConfirmed(1)">Eliminar</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-    
-    
         </div>
-    
-        <div class="text-center mt-4">
-          <button class="btn btn-primary">Ver más</button>
-        </div>
-    
+        
     
       </div>
     </section>
@@ -380,39 +296,40 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script>
-      // Función para guardar un libro en el Local Storage
-      function saveBook(title, description, brand, level, quantity, image, institution, unitCost, contact) {
-        // Obtener los libros guardados del Local Storage (si existen)
-        let books = localStorage.getItem('books');
-        if (!books) {
-          books = []; // Si no hay libros guardados, crear un array vacío
-        } else {
-          books = JSON.parse(books); // Convertir la cadena JSON a un array
-        }
-  
-        // Crear un objeto con la información del libro
-        const book = {
-          title: title,
-          description: description,
-          brand: brand,
-          level: level,
-          quantity: quantity,
-          image: image,
-          institution: institution,
-          unitCost: unitCost,
-          contact: contact
-        };
-  
-        // Agregar el libro al array de libros
-        books.push(book);
-  
-        // Guardar el array de libros en el Local Storage
-        localStorage.setItem('books', JSON.stringify(books));
+
+      window.addEventListener('load', function() {
+        displayBooks();
+      })
+
+      function deleteBook(bookId) {
+        $('#confirmModal').modal('show');
       }
-  
+      function deleteBookConfirmed(bookId) {
+        // Delete
+        var bookElement = document.querySelector('[data-book-id="' + bookId + '"]');
+        if (bookElement) {
+          bookElement.parentNode.parentNode.remove();
+          console.log("Libro eliminado: " + bookId);
+        }
+
+        $('#confirmModal').modal('hide');
+      }
+
+      $('#confirmModal').on('show.bs.modal', function () {
+        $('.modal-confirm').css('display', 'block');
+      });
+
+      $('#confirmModal').on('hide.bs.modal', function () {
+        $('.modal-confirm').css('display', 'none');
+      });
+
+      function closeModal() {
+        $('#confirmModal').modal('hide');
+      }
+    
       // Función para mostrar los libros guardados en el Local Storage
       function displayBooks() {
-        const bookList = document.getElementById('bookList');
+        const bookList = document.getElementById('seller-books-list');
   
         // Obtener los libros guardados del Local Storage (si existen)
         let books = localStorage.getItem('books');
@@ -427,24 +344,31 @@
         bookList.innerHTML = ''; // Limpiar la lista antes de volver a mostrar los libros
   
         books.forEach(function(book) {
-          const listItem = document.createElement('li');
+          const listItem = document.createElement('div');
           listItem.innerHTML = `
-            <strong>Título:</strong> ${book.title}<br>
-            <strong>Descripción:</strong> ${book.description}<br>
-            <strong>Marca:</strong> ${book.brand}<br>
-            <strong>Nivel:</strong> ${book.level}<br>
-            <strong>Cantidad de unidades:</strong> ${book.quantity}<br>
-            <strong>Ruta de la imagen:</strong> ${book.image}<br>
-            <strong>Institución:</strong> ${book.institution}<br>
-            <strong>Costo unitario:</strong> ${book.unitCost}<br>
-            <strong>Contacto:</strong> ${book.contact}<br>
-            <hr>
+            <div style="margin:10px; display: flex; height: 500px; width: 200px border-style:solid" class="portfolio-item">
+              <div class="portfolio-wrap">
+                <img src=${book.image} class="img-fluid" width=400px alt="Portada del libro">
+                <div class="portfolio-info">
+                  <h4>${book.title}</h4>
+                  <p>${book.level}</p>
+                  <div class="portfolio-links">
+                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
+                    <div class="edit-delete-buttons">
+                      <button class="btn-edit" data-book-id="1" onclick="window.location.href='update_book.html'">Editar</button>
+                      <button class="btn-delete" data-book-id="1" onclick="deleteBook(1)">Eliminar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           `;
   
           bookList.appendChild(listItem);
         });
       }
-  
+    
+
       // Evento de envío del formulario para guardar un libro
       const bookForm = document.getElementById('bookForm');
       bookForm.addEventListener('submit', function(event) {

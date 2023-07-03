@@ -1769,7 +1769,21 @@ width:100%;
   color: white;
 }
 
+#seller-books-list{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
+#seller-profile{
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  height: 1200px
+}
+
+#ver_mas_button{
+  margin-top: 700px;
+}
 
 
 
