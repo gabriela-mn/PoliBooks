@@ -1892,75 +1892,100 @@ input[type="number"] {
   justify-content: flex-end;
 }
 
-.book-title {
-  font-size: 24px;
+.align-p-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.custom-title {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.book-input {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 10px;
-  align-items: center;
-  margin-bottom: 20px;
+.custom-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #e9ecef;
+  box-shadow: 5px 5px 12px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
-.book-input label {
-  font-weight: bold;
-  text-align: right;
-}
-
-.book-input input[type="text"] {
-  width: 100%;
-  padding: 5px;
-}
-
-.book-image {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 10px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.book-image label {
-  font-weight: bold;
-  text-align: right;
-}
-
-.book-image img {
-  height: 200px;
-}
-
-.book-image .browse-btn {
-  margin-top: 10px;
-}
-
-.book-grid {
-      background-color: white;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-}
-
-.book-input label {
-  font-weight: bold;
-}
-
-.book-image img {
-  height: 200px;
-  border-radius: 10px;
+.custom-grid h2 {
   margin-bottom: 10px;
 }
 
-.browse-btn {
-  border-radius: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+.custom-grid p {
+  margin-top: 0;
+}
+
+.testimonials_create {
+  padding: 80px 0;
+  background: #ffffff; /* Cambia el color de fondo a blanco */
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Estilos del checkbox personalizado y botón Publicar */
+.checkbox-container {
+  display: flex;
+  align-items: unsafe;
+  justify-content: flex-start;
+  position: absolute;
+  margin-bottom: 10px;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.checkbox-container input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.checkbox-container:hover .checkmark {
+  background-color: #ccc;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background-color: #0E3B65;
+}
+
+.checkmark-icon {
+  display: none;
+  color: #0E3B65;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.checkbox-container input:checked + .checkmark-icon {
+  display: inline-block;
+}
+
+.checkmark-text {
+  flex: 1;
+}
+
+.publish-button {
+  background-color: #0E3B65;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.publish-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
