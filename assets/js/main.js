@@ -372,7 +372,7 @@ logoutButton.addEventListener('click', function() {
 function redirectToUpdatePage(bookId) {
   window.location.href = `update.html?id=${bookId}`;
 }
-
+/*
 function deleteBook(bookId) {
   var confirmDelete = confirm("¿Realmente quieres eliminar este libro?");
 
@@ -385,4 +385,26 @@ function deleteBook(bookId) {
     }
   }
 }
+*/
+function deleteBook(bookId) {
+  $('#confirmModal').modal('show');
+}
 
+function deleteBookConfirmed(bookId) {
+  // Delete
+  var bookElement = document.querySelector('[data-book-id="' + bookId + '"]');
+  if (bookElement) {
+    bookElement.parentNode.parentNode.remove();
+    console.log("Libro eliminado: " + bookId);
+  }
+
+  $('#confirmModal').modal('hide');
+}
+
+$('#confirmModal').on('show.bs.modal', function () {
+  $('.modal-confirm').css('display', 'block');
+});
+
+$('#confirmModal').on('hide.bs.modal', function () {
+  $('.modal-confirm').css('display', 'none');
+});

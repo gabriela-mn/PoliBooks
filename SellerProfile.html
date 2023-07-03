@@ -29,6 +29,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- =======================================================
   * Template Name: BizLand
@@ -111,18 +112,75 @@
 
         <div class="row portfolio-container">
             <!-- Libros del vendedor -->
-            <!-- Libro 1 -->
-            <div class="col-lg-6 col-md-6 portfolio-item">
-              <div class="portfolio-wrap">
-                <img src="assets/img/PoliBooks/interChange2A.jpg" class="img-fluid" alt="Portada del libro">
-                <div class="portfolio-info">
-                  <h4>Título del libro</h4>
-                  <p>Autor del libro</p>
-                  <div class="portfolio-links">
-                    <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
-                    <div class="edit-delete-buttons">
-                      <button class="btn-edit" data-book-id="1" onclick="redirectToUpdatePage(1)">Editar</button>
-                      <button class="btn-delete" data-book-id="1" onclick="deleteBook(1)">Eliminar</button>
+            <div class="row">
+              <!-- Libro 1 -->
+              <div class="col-lg-4 col-md-4 portfolio-item">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/PoliBooks/interChange2A.jpg" class="img-fluid" alt="Portada del libro">
+                  <div class="portfolio-info">
+                    <h4>Título del libro</h4>
+                    <p>Autor del libro</p>
+                    <div class="portfolio-links">
+                      <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
+                      <div class="edit-delete-buttons">
+                        <button class="btn-edit" data-book-id="1" onclick="redirectToUpdatePage(1)">Editar</button>
+                        <button class="btn-delete" data-book-id="1" onclick="deleteBook(1)">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Libro 2 -->
+              <div class="col-lg-4 col-md-4 portfolio-item">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/PoliBooks/interChange1A.jpg" class="img-fluid" alt="Portada del libro">
+                  <div class="portfolio-info">
+                    <h4>Título del libro</h4>
+                    <p>Autor del libro</p>
+                    <div class="portfolio-links">
+                      <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
+                      <div class="edit-delete-buttons">
+                        <button class="btn-edit" data-book-id="2" onclick="redirectToUpdatePage(2)">Editar</button>
+                        <button class="btn-delete" data-book-id="2" onclick="deleteBook(2)">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Libro 3 -->
+              <div class="col-lg-4 col-md-4 portfolio-item">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/PoliBooks/interChange3.jpg" class="img-fluid" alt="Portada del libro">
+                  <div class="portfolio-info">
+                    <h4>Título del libro</h4>
+                    <p>Autor del libro</p>
+                    <div class="portfolio-links">
+                      <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
+                      <div class="edit-delete-buttons">
+                        <button class="btn-edit" data-book-id="3" onclick="redirectToUpdatePage(3)">Editar</button>
+                        <button class="btn-delete" data-book-id="3" onclick="deleteBook(3)">Eliminar</button>
+                        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="confirmModalLabel">Confirmación de eliminación</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p>¿Realmente quieres eliminar este libro?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <a class="btn btn-secondary" data-dismiss="modal" href="SellerProfile.html">Cancelar</a>
+                                <button type="button" class="btn btn-danger" onclick="deleteBookConfirmed(1)">Eliminar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -237,6 +295,10 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!--------------------------->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
