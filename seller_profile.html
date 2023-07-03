@@ -103,7 +103,6 @@
         </div>
         <!-- Fin texto principal -->
 
-
         <div class="row portfolio-container">
           <!-- Libros del vendedor -->
           <div class="row">
@@ -380,6 +379,101 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+      // Función para guardar un libro en el Local Storage
+      function saveBook(title, description, brand, level, quantity, image, institution, unitCost, contact) {
+        // Obtener los libros guardados del Local Storage (si existen)
+        let books = localStorage.getItem('books');
+        if (!books) {
+          books = []; // Si no hay libros guardados, crear un array vacío
+        } else {
+          books = JSON.parse(books); // Convertir la cadena JSON a un array
+        }
+  
+        // Crear un objeto con la información del libro
+        const book = {
+          title: title,
+          description: description,
+          brand: brand,
+          level: level,
+          quantity: quantity,
+          image: image,
+          institution: institution,
+          unitCost: unitCost,
+          contact: contact
+        };
+  
+        // Agregar el libro al array de libros
+        books.push(book);
+  
+        // Guardar el array de libros en el Local Storage
+        localStorage.setItem('books', JSON.stringify(books));
+      }
+  
+      // Función para mostrar los libros guardados en el Local Storage
+      function displayBooks() {
+        const bookList = document.getElementById('bookList');
+  
+        // Obtener los libros guardados del Local Storage (si existen)
+        let books = localStorage.getItem('books');
+        if (!books) {
+          bookList.innerHTML = '<li>No hay libros guardados</li>';
+          return;
+        }
+  
+        books = JSON.parse(books); // Convertir la cadena JSON a un array
+  
+        // Crear elementos de lista para cada libro y agregarlos al DOM
+        bookList.innerHTML = ''; // Limpiar la lista antes de volver a mostrar los libros
+  
+        books.forEach(function(book) {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = `
+            <strong>Título:</strong> ${book.title}<br>
+            <strong>Descripción:</strong> ${book.description}<br>
+            <strong>Marca:</strong> ${book.brand}<br>
+            <strong>Nivel:</strong> ${book.level}<br>
+            <strong>Cantidad de unidades:</strong> ${book.quantity}<br>
+            <strong>Ruta de la imagen:</strong> ${book.image}<br>
+            <strong>Institución:</strong> ${book.institution}<br>
+            <strong>Costo unitario:</strong> ${book.unitCost}<br>
+            <strong>Contacto:</strong> ${book.contact}<br>
+            <hr>
+          `;
+  
+          bookList.appendChild(listItem);
+        });
+      }
+  
+      // Evento de envío del formulario para guardar un libro
+      const bookForm = document.getElementById('bookForm');
+      bookForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+  
+        // Obtener los valores ingresados por el usuario
+        const title = document.getElementById('title').value;
+        const description = document.getElementById('description').value;
+        const brand = document.getElementById('brand').value;
+        const level = document.getElementById('level').value;
+        const quantity = parseInt(document.getElementById('quantity').value);
+        const image = document.getElementById('image').value;
+        const institution = document.getElementById('institution').value;
+        const unitCost = parseFloat(document.getElementById('unitCost').value);
+        const contact = document.getElementById('contact').value;
+  
+        // Guardar el libro en el Local Storage
+        saveBook(title, description, brand, level, quantity, image, institution, unitCost, contact);
+  
+        // Mostrar los libros actualizados
+        displayBooks();
+  
+        // Limpiar los campos del formulario
+        bookForm.reset();
+      });
+  
+      // Mostrar los libros al cargar la página
+      displayBooks();
+    </script>
 
   </body>
 

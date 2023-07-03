@@ -335,8 +335,22 @@ function deleteBook(bookId) {
 */
 
 
-
-
-
 })()
+
+// Habilitar/deshabilitar el botón Publicar según el estado del checkbox
+const acceptCheckbox = document.getElementById('accept-checkbox');
+const publishButton = document.querySelector('.publish-button');
+const checkmarkIcon = document.createElement('span');
+checkmarkIcon.classList.add('checkmark-icon');
+checkmarkIcon.textContent = '✓';
+
+acceptCheckbox.addEventListener('change', function() {
+  publishButton.disabled = !this.checked;
+  if (this.checked) {
+    acceptCheckbox.parentNode.appendChild(checkmarkIcon);
+  } else {
+    checkmarkIcon.remove();
+  }
+});
+
 
