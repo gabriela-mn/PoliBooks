@@ -32,7 +32,7 @@
 
 <body>
 
-  <header id="header" class="align-items">
+  <header id="header" class="align-items head">
     <div class="d-flex justify-content-between">
       <a href="index.html" class="logo"><img src="assets/img/PoliBooks/Logo.svg" alt=""></a>
       <div class="d-flex align-items-center">
@@ -43,18 +43,18 @@
     </div>
 </header>
     <!--create user-->
-    <div class="container r-border">
+    <div class="containe r-border">
       <div class="row internalBorder">
         <div class="col r-title">
         Nuevo Usuario
       </div>
-      <div class="col imgUser">
-        <img src="" alt="">
-        <input type="file" class="col" name="userPhoto" id="imgUser">
+      <div class="col-6 imgUser">
+        <input type="file" class="custom-file-input" id="imgUser">
+    <label class="imgUserLabel" for="imgUser"><img src="./assets/img/User/userProfile.png"></label>
       </div>
     </div>
     <div class="internalBorder">
-    <form action="">
+    <form action="" class="UserForm">
       <div class="mb-3">
             <label for="inputNames" class="form-label">Nombres y Apellido</label>
             <input type="text" name="inputText" class="form-control">
@@ -78,6 +78,7 @@
           </div>
          </div>
         </div>
+        <button type="button" id="successReg" class="btn btn-success">Registrarse</button>
     </form>
     </div>
     </div>

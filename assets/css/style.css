@@ -514,6 +514,7 @@ h6 {
 
 #hero .container {
   position: relative;
+  padding: auto;
 }
 
 #hero h1 {
