@@ -384,7 +384,7 @@
             <h2>Iniciar sesión</h2>
             <p class="login-dialog-text">Inicia sesión para publicar tu Libro a la venta</p>
             <form>
-              <input class="login-dialog-user" type="text" placeholder="Usuario o correo electrónico" id="username"
+              <input pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="login-dialog-user" type="text" placeholder="Correo electrónico" id="username"
                 required>
               <div class="login-dialog-password-container d-flex">
                 <input class="login-dialog-password" type="password" placeholder="Contraseña" id="password" required>
@@ -407,10 +407,9 @@
             <a href="#" id="close-forgot-dialog"><i class="d-flex flex-row-reverse fa-solid fa-xmark"></i></a>
             <h2>Recuperación de la cuenta</h2>
             <p class="login-dialog-text">Por favor, ingresa tu dirección de correo electrónico a continuación y te
-              enviaremos
-              información para cambiar tu contraseña.</p>
+              enviaremos  información para cambiar tu contraseña.</p>
             <form>
-              <input class="login-dialog-user" type="text" placeholder="Correo electrónico" id="username" required>
+              <input pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="login-dialog-user" type="text" placeholder="Correo electrónico" id="username" required>
               <button class="login-dialog-button" type="submit">Enviar correo</button>
             </form>
           </div>
