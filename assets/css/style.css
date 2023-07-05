@@ -1762,11 +1762,23 @@ width:100%;
 .btn-edit {
   background-color: green;
   color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.btn-edit:hover {
+  background-color: rgb(39, 172, 39);
 }
 
 .btn-delete {
   background-color: red;
   color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.btn-delete:hover {
+  background-color: rgb(243, 89, 89);
 }
 
 #seller-books-list{
@@ -1775,9 +1787,8 @@ width:100%;
 }
 
 #seller-profile{
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex-direction: column-reverse;
+  display: flexbox;
+  overflow: auto;
   height: 1200px
 }
 

@@ -40,7 +40,7 @@
   ======================================================== -->
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column; flex-wrap: wrap;"">
 
   <!-- ======= Header ======= -->
   <header id="header" class="flex align-items-center">
@@ -48,11 +48,13 @@
       <!-- Uncomment below if you prefer to use an image logo -->
       <a href="index.html" class="logo"><img src="assets/img/PoliBooks/Logo.svg" alt=""></a>
       <div class="quote">
-        “La lectura de un buen libro es un diálogo incesante, en que el libro habla, y el alma contesta” (André Maurois).
+        “La lectura de un buen libro es un diálogo incesante, en que el libro habla, y el alma contesta” (André
+        Maurois).
       </div>
       <div class="button-container">
         <input class="btn-buy" type="button" id="openDialog" value="Iniciar sesión">
-        <input id="signup-button" onclick="window.location.href='registerUser.html'" class="btn-buy" type="button" value="Registrarse">
+        <input id="signup-button" onclick="window.location.href='registerUser.html'" class="btn-buy" type="button"
+          value="Registrarse">
       </div>
     </div>
 
@@ -83,270 +85,268 @@
 
   </header>
 
-
-    <section id="seller-profile" class="seller-profile">
-      <div class="container">
-  
-        <!-- Texto principal -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div style="background-color: rgb(255, 102, 0); padding: 20px; border-radius: 20px;">
-              <div style="background-color: white; padding: 20px; border-radius: 20px;">
-                <h3 style="color: rgb(212, 165, 8);">Crear.Gestionar.Publicar</h3>
-                <p>Publicar un libro:<br> Ahora tiene la posibilidad de comercializar libros educativos en diferentes
-                  presentaciones, como libros de tapa blanda y libros de tapa dura.</p>
-                <a href="create_book.html" class="btn btn-primary"
-                  style="background-color: rgb(212, 165, 8); color: white;">Crear</a>
-              </div>
+<main style="display: flex; flex-direction: column; border-style:solid; border-width: 20px;">
+  <section id="seller-profile" class="seller-profile">
+    <div class="container">
+      <!-- Texto principal -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div style="background-color: rgb(255, 102, 0); padding: 20px; border-radius: 20px;">
+            <div style="background-color: white; padding: 20px; border-radius: 20px;">
+              <h3 style="color: rgb(212, 165, 8);">Crear.Gestionar.Publicar</h3>
+              <p>Publicar un libro:<br> Ahora tiene la posibilidad de comercializar libros educativos en diferentes
+                presentaciones, como libros de tapa blanda y libros de tapa dura.</p>
+              <a href="create_book.html" class="btn btn-primary"
+                style="background-color: rgb(212, 165, 8); color: white;">Crear</a>
             </div>
           </div>
         </div>
-        <!-- Fin texto principal -->
+      </div>
+      <!-- Fin texto principal -->
 
-        <div class="row portfolio-container">
-          <!-- Libros del vendedor -->
-          <div id="seller-books-list" class="d-flex">
-            <!-- Libro 1 -->
-          
-          
-            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="confirmModalLabel">Confirmación de eliminación</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>¿Realmente quieres eliminar este libro?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <a class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()"">Cancelar</a>
+      <div class="row portfolio-container">
+        <!-- Libros del vendedor -->
+        <div id="seller-books-list" class="d-flex">
+          <!-- Libro 1 -->
+          <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="confirmModalLabel">Confirmación de eliminación</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>¿Realmente quieres eliminar este libro?</p>
+                </div>
+                <div class="modal-footer">
+                  <a class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()"">Cancelar</a>
                                         <button type=" button" class="btn btn-danger"
-                      onclick="deleteBookConfirmed(1)">Eliminar</button>
-                  </div>
+                    onclick="deleteBookConfirmed(1)">Eliminar</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-    
       </div>
-    </section>
 
-      <section>
-        <div id="dialogOverlay">
-          <div id="loginDialog">
-            <a href="#" id="close-login-dialog"><i class="d-flex flex-row-reverse fa-solid fa-xmark"></i></a>
-            <h2>Iniciar sesión</h2>
-            <p class="login-dialog-text">Inicia sesión para publicar tu Libro a la venta</p>
-            <form>
-              <input pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="login-dialog-user" type="text" placeholder="Correo electrónico" id="username"
-                required>
-              <div class="login-dialog-password-container d-flex">
-                <input class="login-dialog-password" type="password" placeholder="Contraseña" id="password" required>
-                <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
-              </div>
-              <a href="#" id="forgot-password-button" class="login-dialog-text">¿Olvidaste tu contraseña?</a>
-              <button class="login-dialog-button" type="submit">Iniciar sesión</button>
-              <p class="login-dialog-signup-text">¿No tienes cuenta? <a href="registerUser.html">Registrate</a></p>
-            </form>
+
+    </div>
+  </section>
+</main>
+
+  <section>
+    <div id="dialogOverlay">
+      <div id="loginDialog">
+        <a href="#" id="close-login-dialog"><i class="d-flex flex-row-reverse fa-solid fa-xmark"></i></a>
+        <h2>Iniciar sesión</h2>
+        <p class="login-dialog-text">Inicia sesión para publicar tu Libro a la venta</p>
+        <form>
+          <input pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="login-dialog-user" type="text"
+            placeholder="Correo electrónico" id="username" required>
+          <div class="login-dialog-password-container d-flex">
+            <input class="login-dialog-password" type="password" placeholder="Contraseña" id="password" required>
+            <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
           </div>
-        </div>
-      </section>
+          <a href="#" id="forgot-password-button" class="login-dialog-text">¿Olvidaste tu contraseña?</a>
+          <button class="login-dialog-button" type="submit">Iniciar sesión</button>
+          <p class="login-dialog-signup-text">¿No tienes cuenta? <a href="registerUser.html">Registrate</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
 
-      <!--
+  <!--
             Dialog for sending an email and establish the password
           -->
-      <section>
-        <div id="dialogForgotPassword">
-          <div id="forgotPasswordDialog">
-            <a href="#" id="close-forgot-dialog"><i class="d-flex flex-row-reverse fa-solid fa-xmark"></i></a>
-            <h2>Recuperación de la cuenta</h2>
-            <p class="login-dialog-text">Por favor, ingresa tu dirección de correo electrónico a continuación y te
-              enviaremos
-              información para cambiar tu contraseña.</p>
-            <form>
-              <input pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="login-dialog-user" type="text" placeholder="Correo electrónico" id="username" required>
-              <button class="login-dialog-button" type="submit">Enviar correo</button>
-            </form>
-          </div>
-        </div>
-      </section>
+  <section>
+    <div id="dialogForgotPassword">
+      <div id="forgotPasswordDialog">
+        <a href="#" id="close-forgot-dialog"><i class="d-flex flex-row-reverse fa-solid fa-xmark"></i></a>
+        <h2>Recuperación de la cuenta</h2>
+        <p class="login-dialog-text">Por favor, ingresa tu dirección de correo electrónico a continuación y te
+          enviaremos
+          información para cambiar tu contraseña.</p>
+        <form>
+          <input pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" class="login-dialog-user" type="text"
+            placeholder="Correo electrónico" id="username" required>
+          <button class="login-dialog-button" type="submit">Enviar correo</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-      <!--
+  <!--
             Dialog for creating a new password
           -->
-      <section>
-        <div id="dialogResetPassword">
-          <div id="resetPasswordDialog">
-            <a href="#" id="close-reset-dialog"><i class="d-flex flex-row-reverse fa-solid fa-xmark"></i></a>
-            <h2>Establecer la contraseña</h2>
-            <p class="reset-dialog-text"> Ingresa una contraseña con las siguientes características:</p>
+  <section>
+    <div id="dialogResetPassword">
+      <div id="resetPasswordDialog">
+        <a href="#" id="close-reset-dialog"><i class="d-flex flex-row-reverse fa-solid fa-xmark"></i></a>
+        <h2>Establecer la contraseña</h2>
+        <p class="reset-dialog-text"> Ingresa una contraseña con las siguientes características:</p>
+        <ul>
+          <li class="reset-dialog-text">Debe incluir letras y números. </li>
+          <li class="reset-dialog-text">Debe combinar letras mayúsculas y minúsculas.</li>
+          <li class="reset-dialog-text">La longitud de la contraseña debe ser igual o mayor a 8 caracteres.</li>
+        </ul>
+        <div class="login-dialog-password-container d-flex">
+          <input class="login-dialog-password" type="password" placeholder="Nueva contraseña" id="password" required>
+          <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
+        </div>
+        <div class="login-dialog-password-container d-flex">
+          <input class="login-dialog-password" type="password" placeholder="Vuelva a escribir la contraseña"
+            id="password" required>
+          <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
+        </div>
+        <form>
+          <button class="reset-dialog-button" type="submit">Confirmar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+<!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>BizLand<span>.</span></h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
             <ul>
-              <li class="reset-dialog-text">Debe incluir letras y números. </li>
-              <li class="reset-dialog-text">Debe combinar letras mayúsculas y minúsculas.</li>
-              <li class="reset-dialog-text">La longitud de la contraseña debe ser igual o mayor a 8 caracteres.</li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
-            <div class="login-dialog-password-container d-flex">
-              <input class="login-dialog-password" type="password" placeholder="Nueva contraseña" id="password"
-                required>
-              <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
-            </div>
-            <div class="login-dialog-password-container d-flex">
-              <input class="login-dialog-password" type="password" placeholder="Vuelva a escribir la contraseña"
-                id="password" required>
-              <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
-            </div>
-            <form>
-              <button class="reset-dialog-button" type="submit">Confirmar</button>
-            </form>
           </div>
-        </div>
-      </section>
 
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-
-            <div class="col-lg-3 col-md-6 footer-contact">
-              <h3>BizLand<span>.</span></h3>
-              <p>
-                A108 Adam Street <br>
-                New York, NY 535022<br>
-                United States <br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Social Networks</h4>
-              <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
-            </div>
-
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
           </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
         </div>
       </div>
+    </div>
 
-      <div class="container py-4">
-        <div class="copyright">
-          &copy; Copyright <strong><span>PoliBooks</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-        </div>
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>PoliBooks</span></strong>. All Rights Reserved
       </div>
-    </footer><!-- End Footer -->
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
 
-      window.addEventListener('load', function() {
-        displayBooks();
-      })
+    window.addEventListener('load', function () {
+      displayBooks();
+    })
 
-      function deleteBook(bookId) {
-        $('#confirmModal').modal('show');
+    function deleteBook(bookId) {
+      $('#confirmModal').modal('show');
+    }
+    function deleteBookConfirmed(bookId) {
+      // Delete
+      var bookElement = document.querySelector('[data-book-id="' + bookId + '"]');
+      if (bookElement) {
+        bookElement.parentNode.parentNode.remove();
+        console.log("Libro eliminado: " + bookId);
       }
-      function deleteBookConfirmed(bookId) {
-        // Delete
-        var bookElement = document.querySelector('[data-book-id="' + bookId + '"]');
-        if (bookElement) {
-          bookElement.parentNode.parentNode.remove();
-          console.log("Libro eliminado: " + bookId);
-        }
 
-        $('#confirmModal').modal('hide');
+      $('#confirmModal').modal('hide');
+    }
+
+    $('#confirmModal').on('show.bs.modal', function () {
+      $('.modal-confirm').css('display', 'block');
+    });
+
+    $('#confirmModal').on('hide.bs.modal', function () {
+      $('.modal-confirm').css('display', 'none');
+    });
+
+    function closeModal() {
+      $('#confirmModal').modal('hide');
+    }
+
+    // Función para mostrar los libros guardados en el Local Storage
+    function displayBooks() {
+      const bookList = document.getElementById('seller-books-list');
+      // Obtener los libros guardados del Local Storage (si existen)
+      let books = localStorage.getItem('books');
+      if (!books || books.length == 2) {
+        bookList.innerHTML = '<li>No hay libros guardados</li>';
+        return;
       }
 
-      $('#confirmModal').on('show.bs.modal', function () {
-        $('.modal-confirm').css('display', 'block');
-      });
+      books = JSON.parse(books); // Convertir la cadena JSON a un array
 
-      $('#confirmModal').on('hide.bs.modal', function () {
-        $('.modal-confirm').css('display', 'none');
-      });
+      // Crear elementos de lista para cada libro y agregarlos al DOM
+      bookList.innerHTML = ''; // Limpiar la lista antes de volver a mostrar los libros
 
-      function closeModal() {
-        $('#confirmModal').modal('hide');
-      }
-    
-      // Función para mostrar los libros guardados en el Local Storage
-      function displayBooks() {
-        const bookList = document.getElementById('seller-books-list');
-        // Obtener los libros guardados del Local Storage (si existen)
-        let books = localStorage.getItem('books');
-        if (!books || books.length ==2) {
-          bookList.innerHTML = '<li>No hay libros guardados</li>';
-          return;
-        }
-  
-        books = JSON.parse(books); // Convertir la cadena JSON a un array
-  
-        // Crear elementos de lista para cada libro y agregarlos al DOM
-        bookList.innerHTML = ''; // Limpiar la lista antes de volver a mostrar los libros
-  
-        books.forEach(function(book) {
-          const listItem = document.createElement('div');
-          listItem.innerHTML = `
-            <div id="book_for_sale_${book.id}" style="margin:10px; display: flex; height: 500px; width: 200px border-style:solid" class="portfolio-item">
+      books.forEach(function (book) {
+        const listItem = document.createElement('div');
+        listItem.innerHTML = `
+            <div data-aos="fade-up" id="book_for_sale_${book.id}" style="margin:10px; display: flex; height: 500px; width: 200px border-style:solid" class="portfolio-item">
               <div class="portfolio-wrap">
                 <img src=${book.image} class="img-fluid" width=400px alt="Portada del libro">
                 <div class="portfolio-info">
@@ -363,45 +363,45 @@
               </div>
             </div>
           `;
-  
-          bookList.appendChild(listItem);
-        });
-      }
-      
-      // Función para borrar un libro del Local Storage
-      function deleteBook(bookId) {
-        const books = JSON.parse(localStorage.getItem('books')) || [];
-        const bookIndex = books.findIndex(book => book.id === bookId);
 
-        if (bookIndex >= 0) {
-          books.splice(bookIndex, 1); // Elimina el elemento de la lista
-          localStorage.setItem('books', JSON.stringify(books)); // Actualiza el localStorage
-          const bookDiv = document.getElementById(`book_for_sale_${bookId}`);
+        bookList.appendChild(listItem);
+      });
+    }
+
+    // Función para borrar un libro del Local Storage
+    function deleteBook(bookId) {
+      const books = JSON.parse(localStorage.getItem('books')) || [];
+      const bookIndex = books.findIndex(book => book.id === bookId);
+
+      if (bookIndex >= 0) {
+        books.splice(bookIndex, 1); // Elimina el elemento de la lista
+        localStorage.setItem('books', JSON.stringify(books)); // Actualiza el localStorage
+        const bookDiv = document.getElementById(`book_for_sale_${bookId}`);
         if (bookDiv) {
           bookDiv.remove();
         }
-        }
+      }
       displayBooks();
-      }
-      
-    </script>
-    <script>
-      function editBook(bookId) {
-        const book = getBookById(bookId); // Obtener el libro por ID
+    }
 
-        if (book) {
-          const url = `update_book.html?bookId=${encodeURIComponent(book.id)}`;
-          window.location.href = url; // Redireccionar a update_book.html con los parámetros de consulta
-        }
+  </script>
+  <script>
+    function editBook(bookId) {
+      const book = getBookById(bookId); // Obtener el libro por ID
+
+      if (book) {
+        const url = `update_book.html?bookId=${encodeURIComponent(book.id)}`;
+        window.location.href = url; // Redireccionar a update_book.html con los parámetros de consulta
       }
-      
-      function getBookById(bookId) {
-        const books = JSON.parse(localStorage.getItem('books')) || [];
-        return books.find(book => book.id === bookId);
-      }
+    }
 
-    </script>
+    function getBookById(bookId) {
+      const books = JSON.parse(localStorage.getItem('books')) || [];
+      return books.find(book => book.id === bookId);
+    }
 
-  </body>
+  </script>
+
+</body>
 
 </html>
