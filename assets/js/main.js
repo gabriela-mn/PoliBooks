@@ -176,8 +176,6 @@
     });
   }
 
-  
-
   /**
    * Skills animation
    */
