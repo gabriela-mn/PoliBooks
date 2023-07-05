@@ -85,7 +85,7 @@
 
   <body>
       <!--create user-->
-    <div class=" r-border">
+      <div class=" r-border">
         <div class="col r-title">
           Nuevo Usuario
         </div>
@@ -100,7 +100,8 @@
             <input type="text" name="inputText" placeholder="Nombres y Apellidos" class="form-control">
           </div>
           <div class="mb-3">
-            <input type="email" placeholder="Correo Electrónico" name="inputEmail" class="form-control">
+            <input type="email" placeholder="Correo Electrónico" name="inputEmail" class="form-control"
+            id="Uemail"> 
           </div>
           <div class="signup-password-container mb-3">
             <input class="login-dialog-password" type="password" placeholder="Contraseña" id="password" required>
@@ -110,7 +111,7 @@
             <input type="movilNumber" placeholder="Número de Teléfono" name="inputNumer" class="form-control">
           </div>
       </div>
-      <button type="button" id="successReg" class="btn btn-success">Registrarse</button>
+      <button type="button" id="successReg" class="btn btn-success" onclick="validarEmail()">Registrarse</button>
       </form>
       </div>
       </div>
@@ -200,6 +201,22 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+
+      function validarEmail() {
+        var emailInput = document.getElementById("Uemail");
+        var email = emailInput.value;
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+        if (regex.test(email)) {
+          //Siguiente Ventana
+          window.location.href="/index.html"
+          
+        } else {
+          alert("El correo electrónico no es válido");
+        }
+      }
+    </script>
   <!-- ======= Footer ======= -->
   <footer class="footer">
     <div class="container">
