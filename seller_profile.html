@@ -354,7 +354,7 @@
                   <div class="portfolio-links">
                     <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
                     <div class="edit-delete-buttons">
-                      <button class="btn-edit" data-book-id="1" onclick="window.location.href='update_book.html'">Editar</button>
+                      <button class="btn-edit" data-book-id="1" onclick="editBook(${book.id})">Editar</button>
                       <button class="btn-delete" data-book-id="1" onclick="deleteBook(${book.id})">Eliminar</button>
                     </div>
                   </div>
@@ -410,6 +410,21 @@
       displayBooks();
       }
       
+    </script>
+    <script>
+      function editBook(bookId) {
+        const book = getBookById(bookId); // Obtener el libro por ID
+
+        if (book) {
+          const url = `update_book.html?bookId=${encodeURIComponent(book.id)}&title=${encodeURIComponent(book.title)}&description=${encodeURIComponent(book.description)}&brand=${encodeURIComponent(book.brand)}&institution=${encodeURIComponent(book.institution)}&level=${encodeURIComponent(book.level)}&unitCost=${encodeURIComponent(book.unitCost)}&quantity=${encodeURIComponent(book.quantity)}&contact=${encodeURIComponent(book.contact)}`;
+          window.location.href = url; // Redireccionar a update_book.html con los parámetros de consulta
+        }
+      }
+
+      function getBookById(bookId) {
+        const books = JSON.parse(localStorage.getItem('books')) || [];
+        return books.find(book => book.id === bookId);
+      }
     </script>
 
   </body>

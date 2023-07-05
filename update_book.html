@@ -111,7 +111,7 @@
                     </div>
     
                     <div class="row">
-                      <input type="text" class="form-control" style="width: 600px;">
+                      <input id="title" type="text" class="form-control" style="width: 600px;">
                     </div>
                   </div>
                 </div>
@@ -136,7 +136,7 @@
                     </div>
     
                     <div class="row">
-                      <input type="text" class="form-control" style="width: 600px;">
+                      <input id="description" type="text" class="form-control" style="width: 600px;">
                     </div>
                   </div>
                 </div>
@@ -204,7 +204,7 @@
                   </div>
     
                   <div class="row">
-                    <input type="text" class="form-control" style="width: 600px;">
+                    <input id="brand" type="text" class="form-control" style="width: 600px;">
                   </div>
                 </div>
               </div>
@@ -230,7 +230,7 @@
                   </div>
     
                   <div class="row">
-                    <input type="text" class="form-control" style="width: 600px;">
+                    <input id="institution" type="text" class="form-control" style="width: 600px;">
                   </div>
                 </div>
               </div>
@@ -258,7 +258,7 @@
                   </div>
     
                   <div class="row">
-                    <input type="text" class="form-control" style="width: 600px;">
+                    <input id="level" type="text" class="form-control" style="width: 600px;">
                   </div>
                 </div>
               </div>
@@ -277,13 +277,13 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="grid-container">
-                        <p class="align-p-left" style="font-size: 12px; width: 290px;">Escriba el precio para el libro.</p>
+                        <p class="align-p-left" style="font-size: 12px; width: 290px;">Escriba el precio para el libro (decimales con ",").</p>
                       </div>
                     </div>
                   </div>
     
                   <div class="row">
-                    <input type="text" class="form-control" style="width: 600px;">
+                    <input id="unitCost" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9,]|,(?=.*[,])/g, '')">
                   </div>
                 </div>
               </div>
@@ -309,7 +309,7 @@
                   </div>
     
                   <div class="row">
-                    <input type="text" class="form-control" style="width: 600px;">
+                    <input id="quantity" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9]/g, '')"> 
                   </div>
                 </div>
               </div>
@@ -331,12 +331,11 @@
                         <p class="align-p-left" style="font-size: 12px; width: 290px;">Escriba un número de
                           celular/teléfono.</p>
                       </div>
-                      <p class="align-p-left" style="font-size: 12px; width: 290px; color: red;">*(Obligatorio)</p>
                     </div>
                   </div>
     
                   <div class="row">
-                    <input type="text" class="form-control" style="width: 600px;">
+                    <input id="contact" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                   </div>
                 </div>
               </div>
@@ -363,7 +362,7 @@
             <!-- Botón Publicar -->
             <div class="row">
               <div class="col-lg-12 text-center">
-                <button class="publish-button">Actualizar</button>
+                <button id = "publish-button" class="publish-button" disabled>Actualizar</button>
               </div>
             </div>
             <!-- Fin Botón Publicar -->
@@ -534,7 +533,31 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+      // Obtener los parámetros de consulta de la URL
+      const urlParams = new URLSearchParams(window.location.search);
 
+      // Obtener los valores de los parámetros de consulta
+      const bookId = urlParams.get('bookId');
+      const title = urlParams.get('title');
+      const description = urlParams.get('description');
+      const brand = urlParams.get('brand');
+      const institution = urlParams.get('institution');
+      const level = urlParams.get('level');
+      const unitCost = urlParams.get('unitCost');
+      const quantity = urlParams.get('quantity');
+      const contact = urlParams.get('contact');
+
+      // Llenar los campos de input con la información del libro
+      document.getElementById('title').value = title;
+      document.getElementById('description').value = description;
+      document.getElementById('brand').value = brand;
+      document.getElementById('institution').value = institution;
+      document.getElementById('level').value = level;
+      document.getElementById('unitCost').value = unitCost;
+      document.getElementById('quantity').value = quantity;
+      document.getElementById('contact').value = contact;
+    </script>
   </body>
 
 </html>

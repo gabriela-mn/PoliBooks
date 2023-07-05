@@ -277,13 +277,13 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="grid-container">
-                        <p class="align-p-left" style="font-size: 12px; width: 290px;">Escriba el precio para el libro.</p>
+                        <p class="align-p-left" style="font-size: 12px; width: 290px;">Escriba el precio para el libro (decimales con ",").</p>
                       </div>
                     </div>
                   </div>
     
                   <div class="row">
-                    <input id= "unitCost" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <input id= "unitCost" type="text" class="form-control" style="width: 600px;" oninput="this.value = this.value.replace(/[^0-9,]|,(?=.*[,])/g, '')">
                   </div>
                 </div>
               </div>
@@ -331,7 +331,6 @@
                         <p class="align-p-left" style="font-size: 12px; width: 290px;">Escriba un número de
                           celular/teléfono.</p>
                       </div>
-                      <p class="align-p-left" style="font-size: 12px; width: 290px; color: red;">*(Obligatorio)</p>
                     </div>
                   </div>
     
@@ -614,6 +613,16 @@
 
 
     </script>
+    <div class="col-lg-12" style="margin-top: 40px;">
+      <!-- Botón Publicar -->
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <button id="publish-button" class="publish-button" disabled>Publicar</button>
+        </div>
+      </div>
+      <!-- Fin Botón Publicar -->
+    </div>
+    
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 

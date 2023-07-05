@@ -338,19 +338,38 @@ function deleteBook(bookId) {
 })()
 
 // Habilitar/deshabilitar el botón Publicar según el estado del checkbox
-const acceptCheckbox = document.getElementById('accept-checkbox');
-const publishButton = document.querySelector('.publish-button');
-const checkmarkIcon = document.createElement('span');
-checkmarkIcon.classList.add('checkmark-icon');
-checkmarkIcon.textContent = '✓';
 
-acceptCheckbox.addEventListener('change', function() {
-  publishButton.disabled = !this.checked;
-  if (this.checked) {
-    acceptCheckbox.parentNode.appendChild(checkmarkIcon);
-  } else {
-    checkmarkIcon.remove();
-  }
+// Obtener los elementos de los campos requeridos
+const titleField = document.getElementById('title');
+const descriptionField = document.getElementById('description');
+const brandField = document.getElementById('brand');
+const institutionField = document.getElementById('institution');
+const unitCostField = document.getElementById('unitCost');
+const quantityField = document.getElementById('quantity');
+const contactField = document.getElementById('contact');
+
+// Obtener el checkbox de aceptación
+const acceptCheckbox = document.getElementById('accept-checkbox');
+
+// Obtener el botón Publicar
+const publishButton = document.getElementById('publish-button');
+
+// Agregar eventos de escucha a los campos requeridos
+[titleField, descriptionField, brandField, institutionField, unitCostField, quantityField, contactField].forEach(function(field) {
+  field.addEventListener('input', checkFields);
 });
+
+// Agregar evento de escucha al checkbox de aceptación
+acceptCheckbox.addEventListener('change', checkFields);
+
+// Función para verificar los campos y habilitar/deshabilitar el botón Publicar
+function checkFields() {
+  const allFieldsFilled = [titleField, descriptionField, brandField, institutionField, unitCostField, quantityField, contactField].every(function(field) {
+    return field.value.trim() !== '';
+  });
+
+  publishButton.disabled = !allFieldsFilled || !acceptCheckbox.checked;
+}
+    
 
 
