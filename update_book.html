@@ -539,24 +539,80 @@
 
       // Obtener los valores de los parámetros de consulta
       const bookId = urlParams.get('bookId');
-      const title = urlParams.get('title');
-      const description = urlParams.get('description');
-      const brand = urlParams.get('brand');
-      const institution = urlParams.get('institution');
-      const level = urlParams.get('level');
-      const unitCost = urlParams.get('unitCost');
-      const quantity = urlParams.get('quantity');
-      const contact = urlParams.get('contact');
 
+      function getBookById(bookId) {
+        const books = JSON.parse(localStorage.getItem('books')) || [];
+        return books.find(book => book.id == bookId);
+      }
+
+      const book = getBookById(bookId);
       // Llenar los campos de input con la información del libro
-      document.getElementById('title').value = title;
-      document.getElementById('description').value = description;
-      document.getElementById('brand').value = brand;
-      document.getElementById('institution').value = institution;
-      document.getElementById('level').value = level;
-      document.getElementById('unitCost').value = unitCost;
-      document.getElementById('quantity').value = quantity;
-      document.getElementById('contact').value = contact;
+      document.getElementById('title').value = book.title;
+      document.getElementById('description').value = book.description;
+      document.getElementById('brand').value = book.brand;
+      document.getElementById('institution').value = book.institution;
+      document.getElementById('level').value = book.level;
+      document.getElementById('unitCost').value = book.unitCost;
+      document.getElementById('quantity').value = book.quantity;
+      document.getElementById('contact').value = book.contact;
+    
+    </script>
+
+    <script>
+      function editBook(id, newTitle, newDescription, newBrand, newInstitution, newLevel, newUnitCost, newQuantity, newContact) {
+        // Obtener los libros guardados del Local Storage (si existen)
+        let books = localStorage.getItem('books');
+        if (!books) {
+          books = []; // Si no hay libros guardados, crear un array vacío
+        } else {
+          books = JSON.parse(books); // Convertir la cadena JSON a un array
+        }
+
+        // Buscar el libro correspondiente al ID proporcionado
+        const bookIndex = books.findIndex(book => book.id == id);
+        // Verificar si se encontró el libro
+        if (bookIndex !== -1) {
+          // Actualizar los campos del libro encontrado
+          books[bookIndex].title = newTitle;
+          books[bookIndex].description = newDescription;
+          books[bookIndex].brand = newBrand;
+          books[bookIndex].level = newLevel;
+          books[bookIndex].quantity = newQuantity;
+          books[bookIndex].institution = newInstitution;
+          books[bookIndex].unitCost = newUnitCost;
+          books[bookIndex].contact = newContact;
+
+          // Guardar el array de libros actualizado en el Local Storage
+          localStorage.setItem('books', JSON.stringify(books));
+        }
+      }
+
+      const button = document.getElementById('publish-button');
+      button.addEventListener('click', function(event) {
+        
+        try{
+          editBook(
+          urlParams.get('bookId'),
+          document.getElementById('title').value,
+          document.getElementById('description').value,
+          document.getElementById('brand').value,
+          document.getElementById('institution').value,
+          document.getElementById('level').value,
+          document.getElementById('unitCost').value,
+          document.getElementById('quantity').value,
+          document.getElementById('contact').value          
+        );
+        throw new Error('¡Algo salió mal!');
+        }catch(error){
+          // Manejo de la excepción
+          console.log('Se ha producido un error:');
+          console.log(error);
+          console.log('Rastro de la pila (stack trace):');
+          console.log(error.stack);
+        }
+
+        window.location.href = 'seller_profile.html'          
+      });
     </script>
   </body>
 

@@ -208,6 +208,7 @@
         </div>
       </section>
 
+
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
@@ -366,34 +367,7 @@
           bookList.appendChild(listItem);
         });
       }
-    
-
-      // Evento de envío del formulario para guardar un libro
-      const bookForm = document.getElementById('bookForm');
-      bookForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que el formulario se envíe automáticamente
-  
-        // Obtener los valores ingresados por el usuario
-        const title = document.getElementById('title').value;
-        const description = document.getElementById('description').value;
-        const brand = document.getElementById('brand').value;
-        const level = document.getElementById('level').value;
-        const quantity = parseInt(document.getElementById('quantity').value);
-        const image = document.getElementById('image').value;
-        const institution = document.getElementById('institution').value;
-        const unitCost = parseFloat(document.getElementById('unitCost').value);
-        const contact = document.getElementById('contact').value;
-  
-        // Guardar el libro en el Local Storage
-        saveBook(title, description, brand, level, quantity, image, institution, unitCost, contact);
-  
-        // Mostrar los libros actualizados
-        displayBooks();
-  
-        // Limpiar los campos del formulario
-        bookForm.reset();
-      });
-  
+      
       // Función para borrar un libro del Local Storage
       function deleteBook(bookId) {
         const books = JSON.parse(localStorage.getItem('books')) || [];
@@ -416,15 +390,16 @@
         const book = getBookById(bookId); // Obtener el libro por ID
 
         if (book) {
-          const url = `update_book.html?bookId=${encodeURIComponent(book.id)}&title=${encodeURIComponent(book.title)}&description=${encodeURIComponent(book.description)}&brand=${encodeURIComponent(book.brand)}&institution=${encodeURIComponent(book.institution)}&level=${encodeURIComponent(book.level)}&unitCost=${encodeURIComponent(book.unitCost)}&quantity=${encodeURIComponent(book.quantity)}&contact=${encodeURIComponent(book.contact)}`;
+          const url = `update_book.html?bookId=${encodeURIComponent(book.id)}`;
           window.location.href = url; // Redireccionar a update_book.html con los parámetros de consulta
         }
       }
-
+      
       function getBookById(bookId) {
         const books = JSON.parse(localStorage.getItem('books')) || [];
         return books.find(book => book.id === bookId);
       }
+
     </script>
 
   </body>

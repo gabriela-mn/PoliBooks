@@ -582,13 +582,11 @@
         const institution = document.getElementById('institution').value;
         const unitCost = parseFloat(document.getElementById('unitCost').value);
         const contact = document.getElementById('contact').value;
-  
+        
         // Guardar el libro en el Local Storage
         saveBook(id, title, description, brand, level, quantity, image, institution, unitCost, contact);
-  
+        window.location.href = 'seller_profile.html'   
         // Mostrar los libros actualizados
-  
-
       });
   
       // Mostrar los libros al cargar la página
