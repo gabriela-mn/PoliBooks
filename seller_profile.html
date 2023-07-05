@@ -330,10 +330,9 @@
       // Función para mostrar los libros guardados en el Local Storage
       function displayBooks() {
         const bookList = document.getElementById('seller-books-list');
-  
         // Obtener los libros guardados del Local Storage (si existen)
         let books = localStorage.getItem('books');
-        if (!books) {
+        if (!books || books.length ==2) {
           bookList.innerHTML = '<li>No hay libros guardados</li>';
           return;
         }
@@ -346,18 +345,17 @@
         books.forEach(function(book) {
           const listItem = document.createElement('div');
           listItem.innerHTML = `
-            <div style="margin:10px; display: flex; height: 500px; width: 200px border-style:solid" class="portfolio-item">
+            <div id="book_for_sale_${book.id}" style="margin:10px; display: flex; height: 500px; width: 200px border-style:solid" class="portfolio-item">
               <div class="portfolio-wrap">
                 <img src=${book.image} class="img-fluid" width=400px alt="Portada del libro">
                 <div class="portfolio-info">
                   <h4>${book.title}</h4>
                   <p>${book.level}</p>
-                  <p style="display: none;"> ${book.id} </p>
                   <div class="portfolio-links">
                     <a href="#" class="portfolio-promote" title="Promocionar y anunciar">Promocionar y anunciar</a>
                     <div class="edit-delete-buttons">
                       <button class="btn-edit" data-book-id="1" onclick="window.location.href='update_book.html'">Editar</button>
-                      <button class="btn-delete" data-book-id="1" onclick="deleteBook('A')">Eliminar</button>
+                      <button class="btn-delete" data-book-id="1" onclick="deleteBook(${book.id})">Eliminar</button>
                     </div>
                   </div>
                 </div>
@@ -397,29 +395,20 @@
       });
   
       // Función para borrar un libro del Local Storage
-function deleteBook(title) {
-  // Obtener los libros guardados del Local Storage
-  let books = localStorage.getItem('books');
-  if (!books) {
-    return; // Si no hay libros guardados, salir de la función
-  }
+      function deleteBook(bookId) {
+        const books = JSON.parse(localStorage.getItem('books')) || [];
+        const bookIndex = books.findIndex(book => book.id === bookId);
 
-  // Convertir la cadena JSON a un array
-  books = JSON.parse(books);
-
-  // Buscar el libro con el título especificado
-  const index = books.findIndex(book => book.title === title);
-  if (index === -1) {
-    return; // Si el libro no se encuentra, salir de la función
-  }
-
-  // Eliminar el libro del array de libros
-  books.splice(index, 1);
-
-  // Guardar el array actualizado en el Local Storage
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
+        if (bookIndex >= 0) {
+          books.splice(bookIndex, 1); // Elimina el elemento de la lista
+          localStorage.setItem('books', JSON.stringify(books)); // Actualiza el localStorage
+          const bookDiv = document.getElementById(`book_for_sale_${bookId}`);
+        if (bookDiv) {
+          bookDiv.remove();
+        }
+        }
+      displayBooks();
+      }
       
     </script>
 
