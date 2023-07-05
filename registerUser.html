@@ -108,7 +108,7 @@
             <a href="#" id="hide-login-password" class="d-flex align-items-center fa-solid fa-eye"></a>
           </div>
           <div class="mb-3">
-            <input type="movilNumber" placeholder="Número de Teléfono" name="inputNumer" class="form-control">
+            <input type="movilNumber" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Número de Teléfono" name="inputNumer" class="form-control">
           </div>
       </div>
       <button type="button" id="successReg" class="btn btn-success" onclick="validarEmail()">Registrarse</button>
